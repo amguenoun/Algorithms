@@ -3,7 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  min = float("inf")
+  if recipe.keys() == ingredients.keys():
+    for item in recipe.keys():
+      if min > ingredients[item] // recipe[item]:
+        min = ingredients[item] // recipe[item]
+
+  if min == float("inf"):
+    min = 0
+  return min  
 
 
 if __name__ == '__main__':
